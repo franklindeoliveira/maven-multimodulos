@@ -10,6 +10,7 @@
 		<groupId>br.com.empresa</groupId>
 		<artifactId>projeto</artifactId>
 		<version>1.0</version>
+		<relativePath>../projeto/pom.xml</relativePath>
 	</parent>
 	
 	<modules>
