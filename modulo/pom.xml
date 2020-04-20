@@ -1,25 +1,26 @@
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
-	
+
 	<modelVersion>4.0.0</modelVersion>
 
+	<groupId>br.com.empresa</groupId>
 	<artifactId>modulo</artifactId>
+	<version>1.0</version>
 	<packaging>pom</packaging>
-	
-	<parent>
-		<groupId>br.com.empresa</groupId>
-		<artifactId>projeto</artifactId>
-		<version>1.0</version>
-		<relativePath>../projeto/pom.xml</relativePath>
-	</parent>
-	
+
+	<properties>
+		<java-source-version>1.6</java-source-version>
+		<java-target-version>1.6</java-target-version>
+	</properties>
+
 	<modules>
 		<module>../modulo-ear</module>
 		<module>../modulo-ejb</module>
 		<module>../modulo-jar</module>
 		<module>../modulo-war</module>
 	</modules>
-	
+
 	<dependencies>
 		<dependency>
 			<groupId>junit</groupId>
@@ -27,6 +28,26 @@
 			<version>3.8.1</version>
 			<scope>test</scope>
 		</dependency>
+		<dependency>
+			<groupId>javax.servlet</groupId>
+			<artifactId>javax.servlet-api</artifactId>
+			<version>3.1.0</version>
+		</dependency>
 	</dependencies>
+
+	<build>
+		<plugins>
+			<!-- Plugin para a configuração da versão do Java -->
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-compiler-plugin</artifactId>
+				<version>3.1</version>
+				<configuration>
+					<source>${java-source-version}</source>
+					<target>${java-target-version}</target>
+				</configuration>
+			</plugin>
+		</plugins>
+	</build>
 
 </project>
